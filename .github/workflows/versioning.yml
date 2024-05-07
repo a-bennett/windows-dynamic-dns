@@ -1,0 +1,14 @@
+name: Action Versioning
+
+on:
+  push:
+    branches:
+      - main
+      - releases/** # If you need to maintain an old major or minor version, branch it to (e.g.) releases/v1
+
+jobs:
+  versioning:
+    name: "Release"
+    permissions:
+      contents: write
+    uses: ProdigySim/action-versioning-workflow/.github/workflows/action_versioning.yml@v1
